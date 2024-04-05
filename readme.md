@@ -1,5 +1,7 @@
 Echomeet is a web app which clone zoom for better experience. It is built using Next.js, Tailwind CSS, Clerk, and stream.
 
+Timeline : 58:18
+
 ## Getting Started
 
 -   Delete the env.example become .env only
@@ -10,6 +12,7 @@ Echomeet is a web app which clone zoom for better experience. It is built using 
 -   npx shadcn-ui@latest add [component-name] (for adding the shadcn-ui component)
     ```text
     -  npx shadcn-ui@latest add button
+    -  npx shadcn-ui@latest add sheet
     ```
 
 ## Learn More
