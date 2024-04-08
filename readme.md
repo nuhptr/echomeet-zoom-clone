@@ -1,6 +1,6 @@
 Echomeet is a web app which clone zoom for better experience. It is built using Next.js, Tailwind CSS, Clerk, and stream.
 
-Timeline : 58:18
+Minute :2:00:25
 
 ## Getting Started
 
@@ -13,7 +13,14 @@ Timeline : 58:18
     ```text
     -  npx shadcn-ui@latest add button
     -  npx shadcn-ui@latest add sheet
+    -  npx shadcn-ui@latest add dialog
     ```
+
+## Setup Stream Video SDK
+
+-   Open the [Stream](https://getstream.io/) website and create an account. Then open the video audio product
+-   bun/npm add @stream-io/video-react-sdk
+-   Create provider folder and setup client & calls
 
 ## Learn More
 
