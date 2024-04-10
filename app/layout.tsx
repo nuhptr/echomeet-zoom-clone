@@ -2,14 +2,20 @@ import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import { ClerkProvider } from "@clerk/nextjs"
 
+import { Toaster } from "@/components/ui/toaster"
+
 import "./globals.css"
+// for apply the styles of the video-react-sdk
+import "@stream-io/video-react-sdk/dist/css/styles.css"
+// for apply react-datepicker styles
+import "react-datepicker/dist/react-datepicker.css"
 
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
     title: "Echomeet | Next generation video conferencing",
     description:
-        "Echomeet is a next generation video conferencing platform that is built for the modern web.",
+        "Echomeet is a next generation video conferencing platform built from modern tech.",
     icons: {
         icon: "/icons/logo.svg",
     },
@@ -36,6 +42,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                     className={`${inter.className} bg-dark-2 no-scrollbar`}
                     suppressHydrationWarning={true}>
                     {children}
+                    <Toaster />
                 </body>
             </ClerkProvider>
         </html>
