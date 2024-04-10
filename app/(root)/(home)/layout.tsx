@@ -1,5 +1,16 @@
+import { Metadata } from "next"
+
 import Navbar from "@/components/Navbar"
 import Sidebar from "@/components/Sidebar"
+
+export const metadata: Metadata = {
+    title: "Echomeet | Next generation video conferencing",
+    description:
+        "Echomeet is a next generation video conferencing platform built from modern tech.",
+    icons: {
+        icon: "/icons/logo.svg",
+    },
+}
 
 export default function HomeLayout({ children }: { children: React.ReactNode }) {
     return (
