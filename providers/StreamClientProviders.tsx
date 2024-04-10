@@ -1,15 +1,14 @@
+"use client"
+
 import { useEffect, useState } from "react"
 import { useUser } from "@clerk/nextjs"
 import { StreamVideoClient, StreamVideo } from "@stream-io/video-react-sdk"
 
-const apiKey = process.env.NEXT_PUBLIC_STREAM_API_KEY
-// const userId = "user-id"
-// const token = "authentication-token"
-// const user: User = { id: userId }
+import { tokenProvider } from "@/actions/stream.action"
 
-// const client = new StreamVideoClient({ apiKey, user, token })
-// const call = client.call("default", "my-first-call")
-// call.join({ create: true })
+import Loader from "@/components/Loader"
+
+const apiKey = process.env.NEXT_PUBLIC_STREAM_API_KEY
 
 export function StreamVideoProvider({ children }: { children: React.ReactNode }) {
     const [videoClient, setVideoClient] = useState<StreamVideoClient | null>(null)
@@ -18,8 +17,17 @@ export function StreamVideoProvider({ children }: { children: React.ReactNode })
     useEffect(() => {
         if (!isLoaded || !user) return
         if (!apiKey) throw new Error("Stream API key missing")
-            
+
+        const client = new StreamVideoClient({
+            apiKey,
+            user: { id: user?.id, name: user?.username || user?.id, image: user?.imageUrl },
+            tokenProvider,
+        })
+
+        setVideoClient(client)
     }, [user, isLoaded])
 
-    return <StreamVideo client={videoClient}></StreamVideo>
+    if (!videoClient) return <Loader />
+
+    return <StreamVideo client={videoClient}>{children}</StreamVideo>
 }
