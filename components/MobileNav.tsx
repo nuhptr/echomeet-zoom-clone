@@ -38,7 +38,7 @@ export default function MobileNav() {
 
                     <div className="flex h-[calc(100vh-72px)] flex-col justify-between overflow-y-auto">
                         <SheetClose asChild>
-                            <section className="flex flex-col h-full gap-6 pt-16 text-white">
+                            <section className="flex flex-col h-full pt-16 text-white gap-6">
                                 {sidebarLinks.map((link) => {
                                     const isActive = pathname === link.route
 
