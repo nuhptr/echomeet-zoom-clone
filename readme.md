@@ -1,6 +1,4 @@
-Echomeet is a web app which clone zoom for better experience. It is built using Next.js, Tailwind CSS, Clerk, and stream.
-
-Minute :2:00:25
+Echomeet is a web app which clone zoom for better experience. It is built using Next.js, Tailwind CSS, Clerk, and stream.io
 
 ## Getting Started
 
@@ -14,13 +12,23 @@ Minute :2:00:25
     -  npx shadcn-ui@latest add button
     -  npx shadcn-ui@latest add sheet
     -  npx shadcn-ui@latest add dialog
+    -  npx shadcn-ui@latest add toast
+    -  npx shadcn-ui@latest add dropdown-menu
+    -  npx shadcn-ui@latest add textarea
     ```
+
+## Global Dependencies
+
+-   [react-datepicker](https://reactdatepicker.com/) - bun install react-datepicker
+-   [@types/react-datepicker] - bun install @types/react-datepicker
 
 ## Setup Stream Video SDK
 
--   Open the [Stream](https://getstream.io/) website and create an account. Then open the video audio product
+-   Open the [stream](https://getstream.io/) website and create an account. Then open the video audio product
 -   bun/npm add @stream-io/video-react-sdk
 -   Create provider folder and setup client & calls
+-   create actions folder, server file and install package `@stream-io/node-sdk`
+-   wrap (root) layout with <StreamVideoProvider></StreamVideoProvider>
 
 ## Learn More
 
