@@ -2,26 +2,30 @@ import { useEffect, useState } from "react"
 import { Call, useStreamVideoClient } from "@stream-io/video-react-sdk"
 
 export function useGetCallById(id: string | string[]) {
-    const [call, setCall] = useState<Call>()
-    const [isCallLoading, setIsCallLoading] = useState(true)
+   // The call object that we want to fetch only 1 call
+   const [call, setCall] = useState<Call>()
+   const [isCallLoading, setIsCallLoading] = useState(true)
 
-    const client = useStreamVideoClient()
+   const client = useStreamVideoClient()
 
-    useEffect(() => {
-        if (!client) return
+   useEffect(() => {
+      if (!client) return
 
-        const loadCall = async () => {
-            const { calls } = await client.queryCalls({
-                filter_conditions: { id },
-            })
-
-            if (calls.length > 0) setCall(calls[0]) // We only expect one call
+      const loadCall = async () => {
+         try {
+            const { calls } = await client.queryCalls({ filter_conditions: { id } })
+            //* We only expect one call to be returned
+            if (calls.length > 0) setCall(calls[0])
 
             setIsCallLoading(false)
-        }
+         } catch (error) {
+            console.error(error)
+            setIsCallLoading(false)
+         }
+      }
 
-        loadCall()
-    }, [client, id])
+      loadCall()
+   }, [client, id])
 
-    return { call, isCallLoading }
+   return { call, isCallLoading }
 }
