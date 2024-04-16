@@ -1,20 +1,13 @@
-import { Metadata } from "next"
+import { ReactNode } from "react"
 
 import { StreamVideoProvider } from "@/providers/StreamClientProviders"
 
-export const metadata: Metadata = {
-    title: "Echomeet | Next generation video conferencing",
-    description:
-        "Echomeet is a next generation video conferencing platform built from modern tech.",
-    icons: {
-        icon: "/icons/logo.svg",
-    },
+const RootLayout = ({ children }: Readonly<{ children: ReactNode }>) => {
+   return (
+      <main>
+         <StreamVideoProvider>{children}</StreamVideoProvider>
+      </main>
+   )
 }
 
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-    return (
-        <main>
-            <StreamVideoProvider>{children}</StreamVideoProvider>
-        </main>
-    )
-}
+export default RootLayout
