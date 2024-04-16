@@ -24,6 +24,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
    return (
       <html lang="en">
+         {/* Clerk Provider in HERE */}
          <ClerkProvider
             appearance={{
                layout: {
