@@ -1,5 +1,7 @@
 Echomeet is a web app which clone zoom for better experience. It is built using Next.js, Tailwind CSS, Clerk, and stream.io
 
+<img width="1440" alt="echomeet" src="https://github.com/nuhptr/echomeet-zoom-clone/assets/50306963/eb10b55c-7d69-43e5-ab25-5d4248348e0b">
+
 ## Getting Started
 
 -  Delete the env.example become .env only
