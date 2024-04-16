@@ -1,30 +1,37 @@
+"use client"
+
 import { useCall, useCallStateHooks } from "@stream-io/video-react-sdk"
 import { useRouter } from "next/navigation"
 
 import { Button } from "@/components/ui/button"
 
-export default function EndCallButton() {
-    const call = useCall()
-    const router = useRouter()
+const EndCallButton = () => {
+   const call = useCall()
+   const router = useRouter()
 
-    const { useLocalParticipant } = useCallStateHooks()
-    const localParticipant = useLocalParticipant()
+   if (!call) throw new Error("useStreamCall must be used within a StreamCall component.")
 
-    const isMeetingOwner =
-        localParticipant &&
-        call?.state.createdBy &&
-        localParticipant.userId === call.state.createdBy.id
+   // https://getstream.io/video/docs/react/guides/call-and-participant-state/#participant-state-3
+   const { useLocalParticipant } = useCallStateHooks()
+   const localParticipant = useLocalParticipant()
 
-    if (!isMeetingOwner) return null
+   const isMeetingOwner =
+      localParticipant &&
+      call?.state.createdBy &&
+      localParticipant.userId === call.state.createdBy.id
 
-    const handleEndCall = async () => {
-        await call?.endCall()
-        router.push("/")
-    }
+   if (!isMeetingOwner) return null
 
-    return (
-        <Button onClick={handleEndCall} className="bg-red-500">
-            End call for everyone
-        </Button>
-    )
+   async function handleEndCall() {
+      await call?.endCall()
+      router.push("/")
+   }
+
+   return (
+      <Button onClick={handleEndCall} className="bg-red-500">
+         End call for everyone
+      </Button>
+   )
 }
+
+export default EndCallButton
