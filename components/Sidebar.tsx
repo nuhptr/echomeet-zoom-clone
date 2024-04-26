@@ -7,7 +7,7 @@ import { usePathname } from "next/navigation"
 import { sidebarLinks } from "@/constants"
 import { cn } from "@/lib/utils"
 
-const Sidebar = () => {
+export default function Sidebar() {
    const pathname = usePathname()
 
    return (
@@ -32,5 +32,3 @@ const Sidebar = () => {
       </section>
    )
 }
-
-export default Sidebar

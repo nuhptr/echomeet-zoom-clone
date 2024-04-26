@@ -24,7 +24,7 @@ const initialValues = {
    link: "",
 }
 
-const MeetingTypeList = () => {
+export default function MeetingTypeList() {
    const router = useRouter()
    const client = useStreamVideoClient()
    const { user } = useUser()
@@ -178,5 +178,3 @@ const MeetingTypeList = () => {
       </section>
    )
 }
-
-export default MeetingTypeList

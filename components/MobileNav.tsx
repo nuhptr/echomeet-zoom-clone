@@ -9,7 +9,7 @@ import { Sheet, SheetClose, SheetContent, SheetTrigger } from "@/components/ui/s
 import { sidebarLinks } from "@/constants"
 import { cn } from "@/lib/utils"
 
-const MobileNav = () => {
+export default function MobileNav() {
    const pathname = usePathname()
 
    return (
@@ -64,5 +64,3 @@ const MobileNav = () => {
       </section>
    )
 }
-
-export default MobileNav

@@ -19,7 +19,7 @@ interface MeetingCardProps {
    link: string
 }
 
-const MeetingCard = ({
+export default function MeetingCard({
    icon,
    title,
    date,
@@ -28,7 +28,7 @@ const MeetingCard = ({
    handleClick,
    link,
    buttonText,
-}: MeetingCardProps) => {
+}: MeetingCardProps) {
    const { toast } = useToast()
 
    return (
@@ -84,5 +84,3 @@ const MeetingCard = ({
       </section>
    )
 }
-
-export default MeetingCard

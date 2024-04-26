@@ -12,7 +12,13 @@ interface MeetingHomeCardProps {
    handleClick: () => void
 }
 
-const HomeCard = ({ className, img, title, description, handleClick }: MeetingHomeCardProps) => {
+export default function HomeCard({
+   className,
+   img,
+   title,
+   description,
+   handleClick,
+}: MeetingHomeCardProps) {
    return (
       <div
          className={cn(
@@ -31,5 +37,3 @@ const HomeCard = ({ className, img, title, description, handleClick }: MeetingHo
       </div>
    )
 }
-
-export default HomeCard

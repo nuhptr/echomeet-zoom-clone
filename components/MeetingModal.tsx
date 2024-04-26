@@ -20,7 +20,7 @@ interface MeetingModalProps {
    buttonIcon?: string
 }
 
-const MeetingModal = ({
+export default function MeetingModal({
    isOpen,
    buttonText,
    className,
@@ -30,7 +30,7 @@ const MeetingModal = ({
    children,
    image,
    buttonIcon,
-}: MeetingModalProps) => {
+}: MeetingModalProps) {
    return (
       <Dialog open={isOpen} onOpenChange={onClose}>
          <DialogContent className="flex w-full max-w-[520px] flex-col gap-6 border-none bg-dark-1 px-6 py-9 text-white">
@@ -66,5 +66,3 @@ const MeetingModal = ({
       </Dialog>
    )
 }
-
-export default MeetingModal

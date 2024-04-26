@@ -15,7 +15,7 @@ interface CallListProps {
    type: "ended" | "upcoming" | "recordings"
 }
 
-const CallList = ({ type }: CallListProps) => {
+export default function CallList({ type }: CallListProps) {
    const router = useRouter()
    const { toast } = useToast()
 
@@ -116,5 +116,3 @@ const CallList = ({ type }: CallListProps) => {
       </div>
    )
 }
-
-export default CallList

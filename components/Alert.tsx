@@ -9,7 +9,7 @@ interface AlertProps {
    iconUrl?: string
 }
 
-const Alert = ({ title, iconUrl }: AlertProps) => {
+export default function Alert({ title, iconUrl }: AlertProps) {
    return (
       <section className="w-full h-screen flex-center">
          <Card className="w-full max-w-[520px] border-none bg-dark-1 p-6 py-9 text-white">
@@ -32,5 +32,3 @@ const Alert = ({ title, iconUrl }: AlertProps) => {
       </section>
    )
 }
-
-export default Alert

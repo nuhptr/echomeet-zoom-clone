@@ -4,7 +4,7 @@ import { SignedIn, UserButton } from "@clerk/nextjs"
 
 import MobileNav from "@/components/MobileNav"
 
-const Navbar = () => {
+export default function Navbar() {
    return (
       <nav className="fixed z-50 w-full px-6 py-4 flex-between bg-dark-1 lg:px-10">
          <Link href="/" className="flex items-center gap-1">
@@ -28,5 +28,3 @@ const Navbar = () => {
       </nav>
    )
 }
-
-export default Navbar

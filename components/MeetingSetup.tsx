@@ -15,7 +15,7 @@ interface MeetingSetupProps {
    setIsSetupComplete: (value: boolean) => void
 }
 
-const MeetingSetup = ({ setIsSetupComplete }: MeetingSetupProps) => {
+export default function MeetingSetup({ setIsSetupComplete }: MeetingSetupProps) {
    const { useCallEndedAt, useCallStartsAt } = useCallStateHooks()
    const callStartsAt = useCallStartsAt()
    const callEndedAt = useCallEndedAt()
@@ -80,5 +80,3 @@ const MeetingSetup = ({ setIsSetupComplete }: MeetingSetupProps) => {
       </div>
    )
 }
-
-export default MeetingSetup

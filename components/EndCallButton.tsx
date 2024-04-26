@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation"
 
 import { Button } from "@/components/ui/button"
 
-const EndCallButton = () => {
+export default function EndCallButton() {
    const call = useCall()
    const router = useRouter()
 
@@ -33,5 +33,3 @@ const EndCallButton = () => {
       </Button>
    )
 }
-
-export default EndCallButton

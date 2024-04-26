@@ -31,7 +31,7 @@ enum CallLayoutType {
    GRID = "grid",
 }
 
-const MeetingRoom = () => {
+export default function MeetingRoom() {
    const router = useRouter()
    const searchParamas = useSearchParams()
    const isPersonalRoom = !!searchParamas.get("personal") // !! converts the value to boolean
@@ -107,5 +107,3 @@ const MeetingRoom = () => {
       </section>
    )
 }
-
-export default MeetingRoom
