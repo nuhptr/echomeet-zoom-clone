@@ -12,7 +12,7 @@ export const metadata: Metadata = {
    },
 }
 
-const HomeLayout = ({ children }: { children: ReactNode }) => {
+export default function HomeLayout({ children }: { children: ReactNode }) {
    return (
       <main className="relative">
          <Navbar />
@@ -27,5 +27,3 @@ const HomeLayout = ({ children }: { children: ReactNode }) => {
       </main>
    )
 }
-
-export default HomeLayout

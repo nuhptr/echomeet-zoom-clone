@@ -14,7 +14,7 @@ interface TableProps {
    description: string
 }
 
-const Table = ({ title, description }: TableProps) => {
+function Table({ title, description }: TableProps) {
    return (
       <div className="flex flex-col items-start gap-2 xl:flex-row">
          <h1 className="text-base font-medium text-sky-1 lg:text-xl xl:min-w-32">{title}</h1>
@@ -25,7 +25,7 @@ const Table = ({ title, description }: TableProps) => {
    )
 }
 
-const PersonalRoom = () => {
+export default function PersonalRoom() {
    const router = useRouter()
    const client = useStreamVideoClient()
 
@@ -74,5 +74,3 @@ const PersonalRoom = () => {
       </section>
    )
 }
-
-export default PersonalRoom

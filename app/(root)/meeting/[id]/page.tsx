@@ -12,7 +12,7 @@ import MeetingRoom from "@/components/MeetingRoom"
 
 import { useGetCallById } from "@/hooks/useGetCallById"
 
-const MeetingPage = () => {
+export default function MeetingPage() {
    const { id } = useParams()
    const { isLoaded, user } = useUser()
 
@@ -43,5 +43,3 @@ const MeetingPage = () => {
       </main>
    )
 }
-
-export default MeetingPage
